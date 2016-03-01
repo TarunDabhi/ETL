@@ -108,7 +108,7 @@
   <hop> <from>Add CUDInd Constants</from><to>Calculator</to><enabled>Y</enabled> </hop>
   <hop> <from>GlobalLocalCode Value Mapper</from><to>Update CIP Harmonized Brand</to><enabled>Y</enabled> </hop>
   <hop> <from>GDPID lookup</from><to>NeedStateID lookup</to><enabled>Y</enabled> </hop>
-  <hop> <from>GlobalLocalCode Value Mapper</from><to>Temp Excel Output</to><enabled>Y</enabled> </hop>
+  <hop> <from>GlobalLocalCode Value Mapper</from><to>Temp Data Output</to><enabled>Y</enabled> </hop>
   <hop> <from>NeedStateID lookup</from><to>GlobalLocalCode Value Mapper</to><enabled>Y</enabled> </hop>
   <hop> <from>Calculator</from><to>GDPID lookup</to><enabled>Y</enabled> </hop>
   <hop> <from>GlobalLocalCode Value Mapper</from><to>Filter rows</to><enabled>Y</enabled> </hop>
@@ -142,7 +142,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>D&#x3a;&#x5c;Work&#x5c;7arun&#x5c;ABI-CIP&#x5c;ETL&#x5c;Trans 2&#x5c;UY_ABIBrandMetadata_20160202v4_testfile.xlsx</name>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;BR_ABIBrandMetadata_20160202v4_Received.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -538,7 +538,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>Unknown  Brand Market ID&#x21;</nullif>
+        <nullif>Unknown&#x2f;Missing  Brand Market ID&#x21;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -550,7 +550,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>Unknown GDP and Need State value&#x21;</nullif>
+        <nullif>Unknown&#x2f;Missing GDP and Need State value&#x21;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -776,7 +776,7 @@
     <append>Y</append>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>D&#x3a;&#x5c;Work&#x5c;7arun&#x5c;ABI-CIP&#x5c;ETL&#x5c;Trans 2&#x5c;Error</name>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;Error_File</name>
       <extention>xls</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <create_parent_folder>N</create_parent_folder>
@@ -801,9 +801,9 @@
     </template>
     <fields>
       <field>
-        <name>Brand Market ID</name>
-        <type>Number</type>
-        <format>&#x23;</format>
+        <name>filename</name>
+        <type>String</type>
+        <format/>
       </field>
       <field>
         <name>Error_Msg1</name>
@@ -816,7 +816,122 @@
         <format>yyyy-MM-dd H&#x3a;mm&#x3a;ss</format>
       </field>
       <field>
-        <name>filename</name>
+        <name>Brand Market ID</name>
+        <type>Number</type>
+        <format>&#x23;</format>
+      </field>
+      <field>
+        <name>Country</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Brand Family Code</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>BrandFamily Name</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>BrandVariant Name</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>ABI Owned&#x3f; &#x28;In HBH&#x29;</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Global&#x2f; Local</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>ABI Focus Brand&#x3f;</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>GDP</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Need State</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Country Owned Licensed&#x3f;</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Macro Beverage Category</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Beer Category Sub-Category</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Price Index</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Main Variant&#x3f;</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>High End Beer&#x3f;</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Craft Beer&#x3f;</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>No Alc Beer&#x3f;</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Low Alc Beer&#x3f;</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Near Beer&#x3f;</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Alc By Vol &#x25;</name>
+        <type>Number</type>
+        <format/>
+      </field>
+      <field>
+        <name>Key Competitor Brand &#x28;1&#x29;</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Key Competitor Brand &#x28;2&#x29;</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
+        <name>Key Competitor Brand &#x28;3&#x29;</name>
         <type>String</type>
         <format/>
       </field>
@@ -1017,7 +1132,7 @@
     </step>
 
   <step>
-    <name>Temp Excel Output</name>
+    <name>Temp Data Output</name>
     <type>ExcelOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1033,7 +1148,7 @@
     <append>N</append>
     <add_to_result_filenames>N</add_to_result_filenames>
     <file>
-      <name>D&#x3a;&#x5c;Work&#x5c;7arun&#x5c;ABI-CIP&#x5c;ETL&#x5c;Trans 2&#x5c;temp_data</name>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;Temp_Data</name>
       <extention>xls</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <create_parent_folder>N</create_parent_folder>
